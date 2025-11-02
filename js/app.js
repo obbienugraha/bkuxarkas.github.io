@@ -1,4 +1,4 @@
-// ===== Extracted from inline <script> blocks =====
+// Extracted from inline <script> blocks
 
 $(document).ready(function() {
             // Global variables for Excel processing
@@ -1801,9 +1801,7 @@ $(document).ready(function() {
                 });
             });
         });
-
 ;
-
 // ===== Sub Uraian: auto generate dari checkbox RKAS =====
     (function(){
         function parseRupiahToInt(txt){
@@ -1936,9 +1934,7 @@ $(document).ready(function() {
         // Ekspor fungsi untuk dipanggil manual jika perlu
         window.renderSubUraianFromSelection = renderSubUraianFromSelection;
     })();
-
 ;
-
 // Tombol popup Sub Uraian -> tampilkan tabel dengan header + judul dari Uraian baris terkait
     $(document).off('click.subUraian').on('click.subUraian', '.sub-uraian-btn', function(){
         // Ambil data sub uraian dari atribut data
@@ -1982,9 +1978,7 @@ $(document).ready(function() {
         var modal = new bootstrap.Modal(document.getElementById('subUraianModal'));
         modal.show();
     });
-
 ;
-
 // Enforce: kolom Uraian (Data Tersimpan) = "Dibayarkan " + isi ✘-Arkas (#uraianTrans), tanpa Sub Uraian
     document.addEventListener('click', function(e){
         var t = e.target;
@@ -2005,9 +1999,7 @@ $(document).ready(function() {
             }, 60);
         }
     }, true);
-
 ;
-
 // Pastikan yang tersimpan di kolom Uraian adalah nilai dari ✘-Arkas (tanpa Sub Uraian)
     document.addEventListener('click', function(e){
         var t = e.target;
@@ -2032,9 +2024,7 @@ $(document).ready(function() {
             }, 60);
         }
     }, true);
-
 ;
-
 (function() {
         function toDDMMYYYY(s) {
             if (!s) return '';
@@ -2096,9 +2086,7 @@ $(document).ready(function() {
             }
         };
     })();
-
 ;
-
 (function(){
         function toDDMMYYYY(s){
             if(!s) return '';
@@ -2169,9 +2157,7 @@ $(document).ready(function() {
             applyUraianFromPembelian('#editTglPembelian', '#editUraian');
         });
     })();
-
 ;
-
 (function(){
         function parseIntSafe(txt){
             if(!txt) return 0;
@@ -2193,9 +2179,7 @@ $(document).ready(function() {
             }
         });
     })();
-
 ;
-
 (function(){
         function toInt(txt){
             if(!txt) return 0;
@@ -2230,9 +2214,7 @@ $(document).ready(function() {
             }
         });
     })();
-
 ;
-
 (function(){
         if (!window.jQuery) return;
         $(function(){
@@ -2400,9 +2382,7 @@ $(document).ready(function() {
             });
         });
     })();
-
 ;
-
 (function(){
   function cleanupBackdrop(){
     // bersihkan backdrop bootstrap yang suka nyangkut
@@ -2499,9 +2479,7 @@ $(document).ready(function() {
     if (el) el.addEventListener('click', cleanupBackdrop);
   });
 })();
-
 ;
-
 // Hapus hanya opsi Jenis Belanja yang sedang dipilih pada combobox Gabungkan Data
 document.addEventListener('click', function(e){
   var btn = e.target.closest('#deleteJenisBelanjaBtn');
@@ -2536,9 +2514,7 @@ document.addEventListener('click', function(e){
     } catch(e) {}
   } catch(err){ console.warn('deleteJenisBelanjaBtn error:', err); }
 }, false);
-
 ;
-
 // Helper: Capitalized Case + whitelist akronim (KBM, BOS, ATK, ADM, PLN tetap kapital)
 function _capitalizedCaseJenis(s){
   s = (s||'').trim();
@@ -2556,9 +2532,7 @@ function _capitalizedCaseJenis(s){
   out = out.replace(reAcr, function(m){ return m.toUpperCase(); });
   return out;
 }
-
 ;
-
 // Buka modal Jenis: sembunyikan Gabungkan, tampilkan Jenis (di depan)
 function openJenisBelanjaModal(){
   var gab = document.getElementById('gabungkanModal');
@@ -2574,9 +2548,7 @@ document.addEventListener('click', function(e){
     openJenisBelanjaModal();
   }
 }, true);
-
 ;
-
 (function(){
   function cleanupBackdrop(){
     document.querySelectorAll('.modal-backdrop').forEach(el=>el.remove());
@@ -2626,9 +2598,7 @@ document.addEventListener('click', function(e){
     if(e.target.closest('#jenisBelanjaBatal')){ e.preventDefault(); var jen=document.getElementById('jenisBelanjaModal'); var gab=document.getElementById('gabungkanModal'); if(jen) jen.style.display='none'; if(gab) gab.style.display='flex'; cleanupBackdrop(); }
   }, true);
 })();
-
 ;
-
 // ESC safety net: close any modal/overlay, remove stuck backdrops, and restore body scroll.
 (function(){
   function escCleanup(){
@@ -2664,9 +2634,7 @@ document.addEventListener('click', function(e){
     }
   }, true);
 })();
-
 ;
-
 (function(){ 
   // Helper: remove backdrops only if there is no other modal visible
   function tidyAfterHide(){
@@ -2732,9 +2700,7 @@ function hideSubUraian(){
   }, true);
 
 })();
-
 ;
-
 (function(){
   function monthKey(){
     // Try bulanFilter text; fallback to current month-year
@@ -2787,9 +2753,7 @@ function hideSubUraian(){
     }
   }, true);
 })();
-
 ;
-
 (function(){
   // Toggle checkbox selection by clicking anywhere on the data row (except interactive controls)
   document.addEventListener('click', function(e){
@@ -2807,9 +2771,7 @@ function hideSubUraian(){
     } catch(err){}
   }, true);
 })();
-
 ;
-
 (function(){
   // Block any user interaction with the right checkboxes
   document.addEventListener('click', function(e){
@@ -2873,9 +2835,7 @@ function hideSubUraian(){
     });
   }, false);
 })();
-
 ;
-
 // Klik baris data hasil upload (excelDataTable) => auto salin ke card ✘-Arkas (uraian, sub uraian, jumlah)
 (function(){
   function getJumlahFromCell(cell){
@@ -2924,9 +2884,7 @@ function hideSubUraian(){
     // var selNama = document.getElementById('namaPegawai'); if (selNama) selNama.focus();
   }, true);
 })();
-
 ;
-
 (function(){
   var fromExcelClick = false;
 
@@ -2966,9 +2924,7 @@ function hideSubUraian(){
     mo.observe(tbody, {childList:true});
   }
 })();
-
 ;
-
 (function(){
   function monthKey(){
     var sel = document.getElementById('bulanFilter');
@@ -3027,9 +2983,7 @@ function hideSubUraian(){
     mo.observe(tbody, {childList:true});
   }
 })();
-
 ;
-
 (function(){
   function baseNorm(s){
     if(!s) return "";
@@ -3141,9 +3095,7 @@ function hideSubUraian(){
     mo.observe(tb, {childList:true});
   })();
 })();
-
 ;
-
 (function($){
   if (!$) return;
   $(function(){
@@ -3198,9 +3150,7 @@ function hideSubUraian(){
     });
   });
 })(window.jQuery);
-
 ;
-
 (function(){
   function uniqPush(arr, val){
     val = (val||"").trim();
@@ -3318,9 +3268,7 @@ function hideSubUraian(){
     }
   }, true);
 })();
-
 ;
-
 (function(){
   function setHiddenInputs(row, key, val){
     try{
@@ -3426,9 +3374,7 @@ function hideSubUraian(){
     });
   }, true);
 })();
-
 ;
-
 (function(){
   var STORAGE_KEYS = {
     pegawai: 'SimpleBOS_listNamaPegawai',
